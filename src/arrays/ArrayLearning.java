@@ -10,7 +10,7 @@ public class ArrayLearning {
         }
 
         String[] names = new String[10];
-        String surname = new String("Phaiju");
+        String surname = "Phaiju";
         System.out.println(surname);
         names[0] = "Santosh Phaiju";
 
