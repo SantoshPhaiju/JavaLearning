@@ -12,6 +12,11 @@ public class Assignment3 {
         System.out.println("1 => Rectangle  2 => Circle  3 => Square");
         int userInput = scanner.nextInt();
 
+        if(userInput > 3 || userInput < 1) {
+            System.out.println("Invalid input");
+            return;
+        }
+
         switch (userInput) {
             case 1:
                 System.out.println("Enter length of rectangle: ");
