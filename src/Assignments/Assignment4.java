@@ -18,7 +18,6 @@ public class Assignment4 {
         }
 
         float average = (float) sum / SIZE;
-
         System.out.println("The average of numbers you entered is: " + average);
 
     }
