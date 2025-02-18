@@ -16,11 +16,11 @@ public class Assignment1 {
         System.out.println("Enter first number: ");
         int num3 = scanner.nextInt();
 
-        if(num1 > num2 && num1 > num3) {
+        if (num1 > num2 && num1 > num3) {
             System.out.println(num1 + " is greater");
         } else if ( num2 > num3) {
             System.out.println(num2 + " is greater");
-        }else {
+        } else {
             System.out.println(num3 + " is greater");
         }
 
