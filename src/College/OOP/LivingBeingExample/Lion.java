@@ -9,7 +9,12 @@ public class Lion extends Animal {
 
    LionType type;
 
-   public String getDetails() {
+    @Override
+    public void eat() {
+        System.out.println(name + " is eating grass 🤣");
+    }
+
+    public String getDetails() {
        if (Objects.requireNonNull(type) == LionType.PRINCE_LION) {
            return "My name is " + name + " and I am a " + "Prince";
        }

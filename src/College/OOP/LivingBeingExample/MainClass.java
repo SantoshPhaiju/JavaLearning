@@ -7,7 +7,6 @@ public class MainClass {
         Lion mufasa = new Lion("Mufasa");
         Bird parrot = new Bird("Parrot");
 
-
         human.eat();
         human.sleep();
         human.walk();
