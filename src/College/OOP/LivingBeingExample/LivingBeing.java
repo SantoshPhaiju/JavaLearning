@@ -11,7 +11,7 @@ public abstract class LivingBeing {
     public LivingBeing () {}
 
     public void eat() {
-        System.out.println(name + " is eating grass 🤣");
+        System.out.println(name + " is eating");
     }
 
     public void sleep() {
