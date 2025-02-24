@@ -23,5 +23,14 @@ public class MainClass {
         System.out.println(mufasaDetails);
         System.out.println(simbaDetails);
 
+        LivingBeing saugat;
+
+        if(simba.type == LionType.KING_LION) {
+            saugat = new Human("Saugat Gautam");
+        } else {
+            saugat = new Lion("Lion Gautam");
+        }
+
+        saugat.eat();
     }
 }
