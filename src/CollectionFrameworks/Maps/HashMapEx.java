@@ -18,5 +18,10 @@ public class HashMapEx {
             System.out.println(data.get(myKey));
         }
 
+        System.out.println(data.values());
+        for (String value: data.values()) {
+            System.out.println(value);
+        }
+
     }
 }
