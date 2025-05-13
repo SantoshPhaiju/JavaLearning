@@ -7,7 +7,6 @@ public class Lab36 {
     public static void main(String[] args) {
 
         // Write a Java program that:Uses an Iterator to access elements of a LinkedList.Prints only the even numbers from a list of integers.
-
         LinkedList<Integer> myLinkedList = new LinkedList<>();
         myLinkedList.add(10);
         myLinkedList.add(20);
