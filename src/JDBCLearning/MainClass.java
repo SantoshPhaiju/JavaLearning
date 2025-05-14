@@ -4,13 +4,11 @@ import java.sql.*;
 
 public class MainClass {
     public static void main(String[] args) {
-
         String url = "jdbc:mysql://localhost:3306/jdbc_learning";
         String username = "root";
         String password = "";
         String query = "SELECT * FROM test";
         String insertQuery = "INSERT INTO test (title, description) VALUES (?, ?)";
-
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
