@@ -9,11 +9,22 @@ public class MainClass {
         String username = "root";
         String password = "";
         String query = "SELECT * FROM test";
+        String insertQuery = "INSERT INTO test (title, description) VALUES (?, ?)";
+
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection c = DriverManager.getConnection(url, username, password);
             Statement st = c.createStatement();
+            PreparedStatement ps = c.prepareStatement(insertQuery);
+            ps.setString(1, "Java");
+            ps.setString(2, "This is the java programming book here...");
+
+            int rowsInserted = ps.executeUpdate();
+
+            if (rowsInserted > 0) {
+                System.out.println("A new record inserted successfully!");
+            }
 
             ResultSet rs = st.executeQuery(query);
 
@@ -27,6 +38,7 @@ public class MainClass {
 
             // Close everything
             rs.close();
+            ps.close();
             st.close();
             c.close();
             System.out.println("Connection closed.");
