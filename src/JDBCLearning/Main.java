@@ -24,7 +24,17 @@ public class Main {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM test";
+            String insertQuery = "INSERT INTO test (title, description) VALUES (?,?)";
+            PreparedStatement pst = connection.prepareStatement(insertQuery);
+            pst.setString(1, "Rich dad Poor dad");
+            pst.setString(2, "This is the all time best selling book in the world!");
             ResultSet resultSet = statement.executeQuery(query);
+            int count = pst.executeUpdate();
+            System.out.println("Number of rows inserted: " + count);
+
+            if (count > 0) {
+                System.out.println("A new record inserted successfully!");
+            }
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -32,7 +42,6 @@ public class Main {
                 String description = resultSet.getString("description");
                 System.out.println("ID: " + id + ", title: " + title + ", description: " + description);
             }
-
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
