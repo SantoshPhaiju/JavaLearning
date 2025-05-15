@@ -14,7 +14,6 @@ public class Main {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-
         } catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -24,17 +23,17 @@ public class Main {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM test";
-            String insertQuery = "INSERT INTO test (title, description) VALUES (?,?)";
-            PreparedStatement pst = connection.prepareStatement(insertQuery);
-            pst.setString(1, "Rich dad Poor dad");
-            pst.setString(2, "This is the all time best selling book in the world!");
+//            String insertQuery = "INSERT INTO test (title, description) VALUES (?,?)";
+//            PreparedStatement pst = connection.prepareStatement(insertQuery);
+//            pst.setString(1, "Rich dad Poor dad");
+//            pst.setString(2, "This is the all time best selling book in the world!");
             ResultSet resultSet = statement.executeQuery(query);
-            int count = pst.executeUpdate();
-            System.out.println("Number of rows inserted: " + count);
+//            int count = pst.executeUpdate();
+//            System.out.println("Number of rows inserted: " + count);
 
-            if (count > 0) {
-                System.out.println("A new record inserted successfully!");
-            }
+//            if (count > 0) {
+//                System.out.println("A new record inserted successfully!");
+//            }
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
