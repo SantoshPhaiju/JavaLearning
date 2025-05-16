@@ -22,7 +22,6 @@ public class BatchProcessing {
                 String choice = sc.nextLine();
                 String query = String.format("INSERT INTO test (title, description) VALUES ('%s', '%s')", title, description);
 
-
                 statement.addBatch(query);
 
                 if(choice.equalsIgnoreCase("N")) {
