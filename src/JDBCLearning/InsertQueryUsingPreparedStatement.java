@@ -36,6 +36,5 @@ public class InsertQueryUsingPreparedStatement {
             System.out.println(e.getMessage());
         }
 
-
     }
 }
