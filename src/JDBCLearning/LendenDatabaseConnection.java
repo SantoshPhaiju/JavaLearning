@@ -9,7 +9,8 @@ public class LendenDatabaseConnection {
     private static final String username = "root";
     private static final String password = "";
 
-    public Connection getConnection() throws ClassNotFoundException, SQLException  {
+    public static Connection getConnection() throws ClassNotFoundException, SQLException  {
+        Class.forName("com.mysql.cj.jdbc.Driver");
         return DriverManager.getConnection(url, username, password);
     }
 }
