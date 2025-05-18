@@ -1,6 +1,8 @@
 package JavaGUI;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SwingEx {
     public static void main(String[] args) {
@@ -27,7 +29,27 @@ public class SwingEx {
         genderGroup.add(maleButton);
         genderGroup.add(femaleButton);
 
+        JLabel description = new JLabel("Description");
+        description.setBounds(20, 120, 100, 25);
+        JTextArea textArea = new JTextArea();
 
+        textArea.setBounds(20, 140, 200, 100);
+        textArea.setLineWrap(true);
+
+        JButton submitButton = new JButton("Submit");
+        submitButton.setBounds(20, 250, 100, 25);
+        systemFrame.add(submitButton);
+
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("button clicked");
+            }
+        });
+
+
+        systemFrame.add(description);
+        systemFrame.add(textArea);
         systemFrame.add(genderLabel);
         systemFrame.add(maleButton);
         systemFrame.add(femaleButton);
