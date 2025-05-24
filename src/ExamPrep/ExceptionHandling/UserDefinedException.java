@@ -12,9 +12,8 @@ public class UserDefinedException {
             int i = 20;
             int j = 0;
 
-            if (j == 0) {
-                throw new MyException("This is invalid");
-            }
+            if (0 == j) throw new MyException("This is invalid");
+
         } catch (MyException e) {
             System.out.println(e.getMessage());
         }
