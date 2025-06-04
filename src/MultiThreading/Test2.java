@@ -11,7 +11,7 @@ public class Test2 {
         };
 */
 
-        Student engineeringStudent = (name) -> {
+        Student engineeringStudent = name -> {
             return name + " is a engineering student";
         };
 
