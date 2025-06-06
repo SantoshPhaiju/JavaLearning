@@ -23,7 +23,7 @@ public class ListMainClass {
         JComboBox<String> comboBox = new JComboBox<>(courses);
         comboBox.setBounds(20, 250, 200, 25);
 
-        JScrollPane scrollPane = new JScrollPane(courseList);
+         JScrollPane scrollPane = new JScrollPane(courseList);
         scrollPane.setBounds(20, 40, 200, 200);
 
         systemFrame.add(scrollPane);

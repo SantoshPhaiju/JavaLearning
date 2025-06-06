@@ -21,8 +21,6 @@ public class SelectQuery {
                 System.out.println("No record found!");
             }
 
-
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

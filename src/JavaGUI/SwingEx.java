@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 
 public class SwingEx {
     public static void main(String[] args) {
-
-
         JFrame systemFrame = new SystemFrame();
 
         JMenuBar systemMenuBar = new SystemMenuBar();
@@ -55,9 +53,6 @@ public class SwingEx {
         systemFrame.add(femaleButton);
         systemFrame.add(nameLabel);
         systemFrame.add(nameField);
-
-
-
 
         systemFrame.setLayout(null);
         systemFrame.setVisible(true);
