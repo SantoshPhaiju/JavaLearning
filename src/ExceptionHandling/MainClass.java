@@ -16,6 +16,11 @@ public class MainClass {
     }
 
     public static int divide(int a, int b) {
+        try {
+
         return a / b;
+        }catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
