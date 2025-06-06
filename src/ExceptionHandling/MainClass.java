@@ -15,7 +15,7 @@ public class MainClass {
         System.out.println("Good Job :) ");
     }
 
-    public static int divide(int a, int b) throws ArithmeticException {
+    public static int divide(int a, int b) {
         return a / b;
     }
 }
