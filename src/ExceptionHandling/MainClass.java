@@ -6,7 +6,7 @@ public class MainClass {
         int[] denominators = {1, 2, 0, 4};
 
         for (int i = 0; i < numerators.length; i++) {
-                System.out.println(divide(numerators[i], denominators[i]));
+            System.out.println(divide(numerators[i], denominators[i]));
         }
         System.out.println("Good Job :) ");
     }
@@ -14,9 +14,10 @@ public class MainClass {
     public static int divide(int a, int b) {
         try {
 
-        return a / b;
-        }catch (ArithmeticException e) {
+            return a / b;
+        } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
+            return -1;
         }
     }
 }
