@@ -5,8 +5,8 @@ public class MainClass {
         BankAccount newAccount = new BankAccount(3000);
         try {
             newAccount.withdraw(5000);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (InsufficientBalanceException e) {
+            System.out.println(e);
         }
     }
 }

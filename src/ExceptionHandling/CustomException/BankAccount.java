@@ -7,9 +7,9 @@ public class BankAccount {
         this.balance = amount;
     }
 
-    public void withdraw(double amount) throws Exception {
+    public void withdraw(double amount) throws InsufficientBalanceException {
         if (amount > balance) {
-            throw new Exception("Insufficient Balance");
+            throw new InsufficientBalanceException();
         }
         balance -= amount;
     }
