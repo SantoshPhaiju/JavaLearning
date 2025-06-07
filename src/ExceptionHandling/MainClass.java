@@ -18,11 +18,8 @@ public class MainClass {
             Animal dog = null;
             dog.walk();
             return a / b;
-        } catch (ArithmeticException e) {
-            System.out.println("ArithmeticException occurred :(: ");
-            return -1;
-        } catch (NullPointerException e) {
-            System.out.println("Null Pointer exception :(");
+        } catch (ArithmeticException | NullPointerException e) {
+            System.out.println("some exception occurred :(: " + e.getMessage());
             return -1;
         } catch (Exception e) {
             System.out.println(e.getMessage());
