@@ -1,5 +1,7 @@
 package ExceptionHandling;
 
+import College.OOP.LivingBeingExample.Animal;
+
 public class MainClass {
     public static void main(String[] args) {
         int[] numerators = {10, 200, 30, 40};
@@ -13,9 +15,16 @@ public class MainClass {
 
     public static int divide(int a, int b) {
         try {
-
+            Animal dog = null;
+            dog.walk();
             return a / b;
         } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException occurred :(: ");
+            return -1;
+        } catch (NullPointerException e) {
+            System.out.println("Null Pointer exception :(");
+            return -1;
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return -1;
         }
