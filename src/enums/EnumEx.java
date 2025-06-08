@@ -1,6 +1,23 @@
 package enums;
 
 public class EnumEx {
+
+    private enum Months {
+        JANUARY,
+        FEBRUARY,
+        MARCH,
+        APRIL,
+        MAY,
+        JUNE,
+        JULY,
+        AUGUST,
+        SEPTEMBER,
+        OCTOBER,
+        NOVEMBER,
+        DECEMBER;
+    }
+
+
     public static void main(String[] args) {
         System.out.println(DayClass.SUNDAY);
         System.out.println(Day.SUNDAY);
@@ -19,5 +36,37 @@ public class EnumEx {
 
         System.out.println(monday.getLowercase());
         System.out.println(monday.getNepali());
+
+        Day day = Day.MONDAY;
+        switch (day) {
+            case MONDAY:
+                System.out.println("M");
+                break;
+            case TUESDAY:
+                System.out.println("TUESDAY");
+                break;
+            case WEDNESDAY:
+                System.out.println("WEDNESDAY");
+                break;
+            case THURSDAY:
+                System.out.println("THURSDAY");
+                break;
+            case FRIDAY:
+                System.out.println("FRIDAY");
+                break;
+            case SATURDAY:
+                System.out.println("SATURDAY");
+
+                break;
+            case SUNDAY:
+                System.out.println("SUNDAY");
+                break;
+            default:
+                System.out.println("Weekend");
+                break;
+        }
+
+        System.out.println(Months.MAY);
     }
+
 }
