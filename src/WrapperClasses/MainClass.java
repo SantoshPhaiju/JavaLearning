@@ -10,5 +10,16 @@ public class MainClass {
         // Integer, String, Boolean, Float, Double, Character, Byte, Short, Long
 
         // wrapper classes are used when we need to change primitive data types into objects
+
+        boolean hasGraphicCard = false;
+        Boolean isAdult = true;
+        Float f = 1.2F;
+        Double d = 1.2D;
+        Character c = 'a';
+        Byte bb = 1;
+        Short s= 2;
+        Long l = 33432L;
+
+        System.out.println(hasGraphicCard + " " + isAdult + " " + f);
     }
 }
