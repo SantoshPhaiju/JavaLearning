@@ -19,7 +19,10 @@ public class MainClass {
         Byte bb = 1;
         Short s= 2;
         Long l = 33432L;
+        String str = "123";
+        System.out.println(Integer.parseInt(str) + 54);
 
+        System.out.println(Integer.toBinaryString(70));
         System.out.println(hasGraphicCard + " " + isAdult + " " + f);
     }
 }
