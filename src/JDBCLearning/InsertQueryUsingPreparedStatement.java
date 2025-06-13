@@ -5,7 +5,7 @@ import java.sql.*;
 public class InsertQueryUsingPreparedStatement {
     private static final String url = "jdbc:mysql://localhost:3306/jdbc_learning";
     private static final String username = "root";
-    private static final String password = "";
+    private static final String password = "@CoderMan99";
 
     public static void main(String[] args) {
 
