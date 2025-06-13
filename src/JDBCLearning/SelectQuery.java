@@ -9,7 +9,7 @@ public class SelectQuery {
     public static void main(String[] args) {
         try {
             Connection connection = DatabaseConnection.getConnection();
-            String query = "Select title FROM test WHERE id = ?";
+            String query = "SELECT title FROM test WHERE id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, 1);
             ResultSet resultSet = preparedStatement.executeQuery();
