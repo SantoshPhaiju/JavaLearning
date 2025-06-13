@@ -9,7 +9,7 @@ public class UpdateQuery {
 
     private static final String url = "jdbc:mysql://localhost:3306/jdbc_learning";
     private static final String username = "root";
-    private static final String password = "";
+    private static final String password = "@CoderMan99";
 
 
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class UpdateQuery {
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
-            String query = String.format("UPDATE test SET title = '%s' WHERE id = %d", "new updated book", 7);
+            String query = String.format("UPDATE test SET title = '%s' WHERE id = %d", "new updated book", 8);
 
             int count = statement.executeUpdate(query);
 
