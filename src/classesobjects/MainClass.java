@@ -9,9 +9,5 @@ public class MainClass {
         System.out.println("Price of the book is: " + RichDadPoorDad.getPrice());
         System.out.println("Type of the book is: " + RichDadPoorDad.getType());
         System.out.println("Number of pages of the book is: " + RichDadPoorDad.getPages());
-
-
-
-
     }
 }
