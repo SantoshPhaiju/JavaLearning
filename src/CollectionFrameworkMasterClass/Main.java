@@ -20,7 +20,7 @@ public class Main {
         myArrayList.forEach(System.out::println);
 
         System.out.println("contains: " + myArrayList.contains(1));
-        System.out.println("contains: " + myArrayList.contains(20 ));
+        System.out.println("contains: " + myArrayList.contains(20));
 
         ArrayList<String> students = new ArrayList<>();
         students.add("Santosh");
@@ -35,6 +35,13 @@ public class Main {
         System.out.println(students.contains("Rupesh"));
         System.out.println(students);
 
+        for (String student : students) {
+            System.out.println("Student: " + student);
+        }
+
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println("Student " + (i + 1) + " " + students.get(i));
+        }
 
     }
 }
