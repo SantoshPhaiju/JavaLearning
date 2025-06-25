@@ -29,6 +29,11 @@ public class Main {
         students.add("Alishan");
 
         System.out.println(students);
+        students.set(1, "Saugat");
+//        students.remove(2);
+        students.remove(String.valueOf("Rupesh"));
+        System.out.println(students.contains("Rupesh"));
+        System.out.println(students);
 
 
     }
