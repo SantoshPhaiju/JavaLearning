@@ -1,6 +1,7 @@
 package CollectionFrameworkMasterClass;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -41,6 +42,15 @@ public class Main {
 
         for (int i = 0; i < students.size(); i++) {
             System.out.println("Student " + (i + 1) + " " + students.get(i));
+        }
+
+        students.forEach(item -> {
+            System.out.println("Student foreach: " + item);
+        });
+
+        Iterator<String> iterator = students.iterator();
+        while (iterator.hasNext()) {
+            System.out.println("Student iterator: " + iterator.next());
         }
 
     }
