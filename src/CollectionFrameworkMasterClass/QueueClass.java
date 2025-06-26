@@ -18,6 +18,7 @@ public class QueueClass {
         // this means dequeue
         System.out.println(queue.poll());
         System.out.println(queue.poll());
+        System.out.println(queue.peek());
         System.out.println(queue);
     }
 }
