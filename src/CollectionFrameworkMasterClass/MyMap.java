@@ -20,11 +20,15 @@ public class MyMap {
         map1.put("role", "Developer");
 
         Map<String, String> map2 = new HashMap<>();
+        Map<String, String> map3 = new HashMap<>();
         map2.put("name", "Ram");
         map2.put("role", "Designer");
+        map3.put("name", "Hero");
+        map3.put("role", "Manager");
 
         listOfMaps.add(map1);
         listOfMaps.add(map2);
+        listOfMaps.add(map3);
 
         for (Map<String, String> item : listOfMaps) {
             System.out.println(item);
