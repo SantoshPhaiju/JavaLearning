@@ -1,6 +1,6 @@
 package JavaGenerics;
 
-public class Box<T> {
+public class Box<T extends Number> {
     private T value;
 
     public T getValue() {
