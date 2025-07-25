@@ -14,10 +14,10 @@ public class Main {
 //        list.add(123);
         list.add("santosh");
 
-        Box<Integer> myIntList = new Box<>();
-        myIntList.setValue(1);
-        myIntList.setValue(2);
-        myIntList.setValue(3);
+//        Box<Integer> myIntList = new Box<>();
+//        myIntList.setValue(1);
+//        myIntList.setValue(2);
+//        myIntList.setValue(3);
 
 
         list.forEach(System.out::println);
