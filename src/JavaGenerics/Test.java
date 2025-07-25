@@ -1,7 +1,7 @@
 package JavaGenerics;
 
 interface Printable {
-    void print();
+    public void print();
 }
 
 class MyNumber extends Number implements Printable {
@@ -38,6 +38,30 @@ class MyNumber extends Number implements Printable {
     }
 }
 
-public class Test<T extends Number & Printable> {
+class Boxx<T extends Number & Printable> {
+    private T item;
 
+    public Boxx(T item) {
+        this.item = item;
+    }
+
+    public void display() {
+        item.print();
+    }
+
+    public T getItem() {
+        return item;
+    }
+
+    public void setItem(T item) {
+        this.item = item;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MyNumber myNumber = new MyNumber(16);
+        Boxx<MyNumber> box = new Boxx<>(myNumber);
+        box.display();
+    }
 }
