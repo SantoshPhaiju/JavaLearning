@@ -7,6 +7,15 @@ import java.util.List;
 public class WildCards {
     public static void main(String[] args) {
         System.out.println(sum(Arrays.asList(1, 2, 3, 4)));
+
+        List<? extends  Number> numbers = Arrays.asList(1, 2, 3, 4);
+        numbers.add(null);
+
+        List<? super Integer> numbers2 = Arrays.asList(1, 2, 3, 4);
+        numbers2.add(20);
+        numbers2.add(30);
+        System.out.println(numbers);
+        System.out.println(numbers2);
     }
 
     // while doing readonly kam we can use wild card type <?>
