@@ -9,7 +9,5 @@ public class ArrayListExample {
         arrayList.add(2);
 
         System.out.println(arrayList.get(0));
-
-
     }
 }
