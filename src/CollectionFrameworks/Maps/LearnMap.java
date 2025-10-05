@@ -2,12 +2,13 @@ package CollectionFrameworks.Maps;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class LearnMap {
     public static void main(String[] args) {
 
-        Map<String, Integer> numbers = new HashMap<>();
-
+//        Map<String, Integer> numbers = new HashMap<>();
+          Map<String, Integer> numbers = new TreeMap<>();
         // always unique key
         numbers.put("One", 1);
         if (!numbers.containsKey("One")) {
@@ -45,11 +46,6 @@ public class LearnMap {
         System.out.println(numbers);
         numbers.clear();
         System.out.println(numbers);
-
-
-
-
-
 
 
     }
