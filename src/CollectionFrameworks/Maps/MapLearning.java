@@ -1,11 +1,16 @@
 package CollectionFrameworks.Maps;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-class PrintArray extends ArrayList<String> {
-
+class PrintArray {
+    public void toString(String[] arr) {
+        System.out.print("[");
+        for (String str : arr) {
+            System.out.print(str + ",");
+        }
+        System.out.println("]");
+    }
 }
 
 public class MapLearning {
@@ -16,6 +21,11 @@ public class MapLearning {
         Map<String, Integer> wordCount = new HashMap<>();
         wordCount.put("santosh", 0);
         String[] splittedstring = myString.split(" ");
+        PrintArray pa = new PrintArray();
+        pa.toString(splittedstring);
+        System.out.println(pa);
+
+
         for (String string : splittedstring) {
             System.out.println(string);
         }
