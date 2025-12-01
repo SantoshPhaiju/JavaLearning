@@ -1,6 +1,5 @@
 package CollectionFrameworks.Maps;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -14,7 +13,7 @@ public class LearnMap {
         if (!numbers.containsKey("One")) {
             numbers.put("One", 2);
         }
-        // can have same value
+        // can have the same value
         numbers.put("Five1", 5);
         numbers.put("Two", 2);
         numbers.put("Three", 3);
