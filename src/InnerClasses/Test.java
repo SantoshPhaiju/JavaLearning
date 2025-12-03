@@ -24,8 +24,9 @@ public class Test {
         * Instead of this thing i can also use lambda expression hehee
          */
 
+/*
         ShoppingCart shoppingCart = new ShoppingCart(150);
-//        CreditCardV0 creditCard = new CreditCardV0("4323");
+        CreditCardV0 creditCard = new CreditCardV0("4323");
         shoppingCart.processPayment(new Payment() {
             @Override
             public void pay(double amount) {
@@ -37,5 +38,15 @@ public class Test {
         shoppingCart.processPayment(amount ->
                 System.out.println("You have paid " + amount + "$ using PayPal.")
         );
+*/
+
+        Hotel hotel = new Hotel("Sunsine Hotel", 10, 5);
+        hotel.reserveRoom("Santosh Phaiju", 5);
+        hotel.reserveRoom("Saugat", -1);
+
+
+
+
+
     }
 }
