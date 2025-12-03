@@ -8,6 +8,6 @@ public class ShoppingCart {
     }
 
     public void processPayment(Payment paymentMethod) {
-        System.out.println("Processing payment for total amount: " + totalAmount);
+        paymentMethod.pay(totalAmount);
     }
 }
