@@ -10,14 +10,13 @@ public class UncheckedExceptions {
         // which exceptions are checked during compile time is checked exception
         // those exceptions which are not checked during compilation is unchecked exception
 
-           try (BufferedReader reader = new BufferedReader(new FileReader("a.txt"))) {
-               String line;
-               while ((line = reader.readLine()) != null) {
-                   System.out.println(line);
-               }
-           } catch (IOException e) {
-               System.out.println(e.getMessage());
-           }
-
+        try (BufferedReader reader = new BufferedReader(new FileReader("a.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

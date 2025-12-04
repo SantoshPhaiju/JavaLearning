@@ -20,7 +20,7 @@ public enum Day {
         return nepali;
     }
 
-    private Day(String lower, String nepali) {
+    Day(String lower, String nepali) {
         System.out.println("constructor called");
         this.lowercase = lower;
         this.nepali = nepali;

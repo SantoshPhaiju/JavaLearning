@@ -1,6 +1,5 @@
 package CollectionFrameworkMasterClass;
 
-import java.sql.Array;
 import java.util.*;
 
 class StringLengthComparator implements Comparator<String> {
@@ -8,8 +7,6 @@ class StringLengthComparator implements Comparator<String> {
     public int compare(String s1, String s2) {
         return 0;
     }
-
-
 }
 
 class MyComparator implements Comparator<Integer> {

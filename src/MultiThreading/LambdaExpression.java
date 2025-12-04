@@ -8,7 +8,5 @@ public class LambdaExpression {
 
         Thread t1 = new Thread(runnable);
         t1.start();
-
-
     }
 }
