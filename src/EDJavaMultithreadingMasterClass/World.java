@@ -12,8 +12,6 @@ package EDJavaMultithreadingMasterClass;
 public class World implements Runnable {
     @Override
     public void run() {
-        for (; ; ) {
-            System.out.println("World from thread");
-        }
+        System.out.println("World from thread");
     }
 }
