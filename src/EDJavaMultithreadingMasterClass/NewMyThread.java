@@ -21,3 +21,5 @@ public class NewMyThread extends Thread {
         System.out.println("Hello");
     }
 }
+// Thread Methods
+// start run sleep join setPriority yield setDaemon
