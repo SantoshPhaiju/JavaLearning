@@ -25,8 +25,8 @@ class Paper {
 
 
 class Task1 implements Runnable {
-    private Paper paper;
-    private Pen pen;
+    private final Paper paper;
+    private final Pen pen;
 
     public Task1(Pen pen, Paper paper) {
         this.paper = paper;
@@ -42,8 +42,8 @@ class Task1 implements Runnable {
 }
 
 class Task2 implements Runnable {
-    private Paper paper;
-    private Pen pen;
+    private final Paper paper;
+    private final Pen pen;
 
     public Task2(Paper paper, Pen pen) {
         this.paper = paper;
