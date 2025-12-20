@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class MainClass {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 //        Thread[] threads = new Thread[9];
         ExecutorService executor = Executors.newFixedThreadPool(3);
@@ -19,7 +19,12 @@ public class MainClass {
         }
 
         executor.shutdown();
-        executor.awaitTermination(100, TimeUnit.SECONDS);
+        try {
+            boolean isTerminated = executor.awaitTermination(100, TimeUnit.SECONDS);
+            System.out.println("Is terminated: " + isTerminated);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Total time taken: " + (System.currentTimeMillis() - startTime) + " ms");
     }
 
