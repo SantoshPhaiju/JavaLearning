@@ -2,7 +2,6 @@ package EDJavaMultithreadingMasterClass.ExecutorFramework;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 public class MainClass {
     public static void main(String[] args) {
@@ -19,12 +18,20 @@ public class MainClass {
         }
 
         executor.shutdown();
-        try {
-            boolean isTerminated = executor.awaitTermination(100, TimeUnit.SECONDS);
-            System.out.println("Is terminated: " + isTerminated);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+
+
+//        try {
+//           boolean isTerminated = executor.awaitTermination(100, TimeUnit.SECONDS);
+//           System.out.println("Is terminated: " + isTerminated);
+//            while (!executor.awaitTermination(100, TimeUnit.MILLISECONDS)) {
+//                System.out.println("Waiting for all threads to finish");
+//            }
+//           while (!executor.isTerminated()) {
+//            System.out.println("Waiting for all threads to finish");
+//            }
+//        } catch (InterruptedException e) {
+//            Thread.currentThread().interrupt();
+//        }
         System.out.println("Total time taken: " + (System.currentTimeMillis() - startTime) + " ms");
     }
 
