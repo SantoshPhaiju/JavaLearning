@@ -1,21 +1,43 @@
 package EDJavaMultithreadingMasterClass.ExecutorFramework;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class MainClass {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
+        try (ExecutorService executorService = Executors.newFixedThreadPool(2)) {
+
+            executorService.invokeAll()
+
+
+
+
+
+//            Future<Integer> submit = executorService.submit(() -> 1 + 2);
+//            Integer i = submit.get();
+//            System.out.println("sum is: " + i);
+//            executorService.shutdown();
+//            Thread.sleep(1);
+//            System.out.println(executorService.isTerminated());
+        }
+
+
         // When You want to return something you use callable interface and if you don't want to return anything you use runnable interface okay...
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
 //        Future<Integer> future = executorService.submit(() -> 42);
-        Callable<String> callable = () -> "Hello";
-        Future<?> future = executorService.submit(callable);
+//        Callable<String> callable = () -> "Hello";
+//        Future<?> future = executorService.submit(callable);
+//        Future<?> future2 = executorService.submit(() -> System.out.println("Hello"), "Hello submitted result!");
+//        System.out.println(future2.get());
 
 //        future.cancel(true);
-        System.out.println(future.get());
+//        System.out.println(future.get());
 
 
-        executorService.shutdown();
+//        executorService.shutdown();
 
 //        long startTime = System.currentTimeMillis();
 //        Thread[] threads = new Thread[9];
