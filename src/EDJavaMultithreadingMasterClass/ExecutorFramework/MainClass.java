@@ -1,16 +1,14 @@
 package EDJavaMultithreadingMasterClass.ExecutorFramework;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class MainClass {
     public static void main(String[] args) {
 
-        try (ExecutorService executorService = Executors.newFixedThreadPool(3)) {
+        try (ExecutorService executorService = Executors.newSingleThreadExecutor()) {
 
             Callable<Integer> callable1 = () -> {
                 System.out.println("Callable 1 is running");
@@ -28,16 +26,36 @@ public class MainClass {
                 return 3;
             };
 
-            List<Callable<Integer>> list = Arrays.asList(callable1, callable2, callable3);
-
+            Future<Integer> future = executorService.submit(() -> {
+                try {
+                    Thread.sleep(2000);
+                    System.out.println("Task is done ");
+                } catch (InterruptedException e) {
+                    System.out.println("Exception occurred: " + e.getMessage());
+                }
+                return 42;
+            });
             try {
-                Integer i = executorService.invokeAny(list);
-                System.out.println(i);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
-            } catch (ExecutionException e) {
-                throw new RuntimeException(e);
             }
+            future.cancel(false);
+            System.out.println(future.isCancelled());
+            System.out.println(future.isDone());
+            executorService.shutdown();
+
+
+//            List<Callable<Integer>> list = Arrays.asList(callable1, callable2, callable3);
+//
+//            try {
+//                Integer i = executorService.invokeAny(list);
+//                System.out.println(i);
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            } catch (ExecutionException e) {
+//                throw new RuntimeException(e);
+//            }
 
 
 //            List<Future<Integer>> futures = null;
@@ -59,9 +77,9 @@ public class MainClass {
 //                }
 //            }
 
-            executorService.shutdown();
+//            executorService.shutdown();
             // invokeAll blocks the main thread until all the tasks are completed
-            System.out.println("Hello world");
+//            System.out.println("Hello world");
 
 
 //            Future<Integer> submit = executorService.submit(() -> 1 + 2);
