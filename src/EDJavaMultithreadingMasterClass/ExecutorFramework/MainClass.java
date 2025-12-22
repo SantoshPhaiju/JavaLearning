@@ -1,13 +1,9 @@
 package EDJavaMultithreadingMasterClass.ExecutorFramework;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
 public class MainClass {
     public static void main(String[] args) {
 
+        /*
         try (ExecutorService executorService = Executors.newSingleThreadExecutor()) {
 
             Callable<Integer> callable1 = () -> {
@@ -33,6 +29,7 @@ public class MainClass {
                 } catch (InterruptedException e) {
                     System.out.println("Exception occurred: " + e.getMessage());
                 }
+                System.out.println("Hello");
                 return 42;
             });
             try {
@@ -89,7 +86,7 @@ public class MainClass {
 //            Thread.sleep(1);
 //            System.out.println(executorService.isTerminated());
         }
-
+*/
 
         // When You want to return something you use callable interface and if you don't want to return anything you use runnable interface okay...
 //        ExecutorService executorService = Executors.newSingleThreadExecutor();
