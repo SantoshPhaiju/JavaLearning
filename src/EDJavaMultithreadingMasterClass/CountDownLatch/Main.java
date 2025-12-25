@@ -4,13 +4,15 @@ import java.util.concurrent.*;
 
 public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        int numberOfServices = 3;
+        int numberOfServices = 1;
         ExecutorService executorService = Executors.newFixedThreadPool(numberOfServices);
-        CountDownLatch latch = new CountDownLatch(numberOfServices);
-        executorService.submit(new DependentService(latch));
-        executorService.submit(new DependentService(latch));
-        executorService.submit(new DependentService(latch));
-        latch.await();
+
+        // CountDownLatch is not reusable, so we can use cyclicBarrier instead.
+//        CountDownLatch latch = new CountDownLatch(numberOfServices);
+        CyclicBarrier barrier = new CyclicBarrier(numberOfServices);
+        executorService.submit(new DependentService(barrier));
+        executorService.submit(new DependentService(barrier));
+        executorService.submit(new DependentService(barrier));
 
         System.out.println("All dependent services started. Starting main service...");
         executorService.shutdown();
@@ -32,20 +34,18 @@ public class Main {
 
 
 class DependentService implements Callable<String> {
-    private final CountDownLatch latch;
+    private final CyclicBarrier barrier;
 
-    public DependentService(CountDownLatch latch) {
-        this.latch = latch;
+    public DependentService(CyclicBarrier barrier) {
+        this.barrier = barrier;
     }
 
     @Override
     public String call() throws Exception {
-        try {
-            System.out.println(Thread.currentThread().getName() + " service started.");
-            Thread.sleep(2000);
-        } finally {
-            latch.countDown();
-        }
+        System.out.println(Thread.currentThread().getName() + " service started.");
+        Thread.sleep(1000);
+        System.out.println(Thread.currentThread().getName() + " is waiting at the barrier.");
+        barrier.await();
         return "okay";
     }
 }
