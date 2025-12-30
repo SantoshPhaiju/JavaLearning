@@ -4,12 +4,21 @@ interface Printable {
     public void print();
 }
 
-class MyNumber extends Number implements Printable {
-     private final int value;
+interface MyBox {
+    public void display();
+}
 
-     public MyNumber(int value) {
-         this.value = value;
-     }
+class MyNumber extends Number implements Printable, MyBox {
+    private final int value;
+
+    public MyNumber(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public void display() {
+        System.out.println("MyNumber: " + value);
+    }
 
     @Override
     public void print() {
@@ -38,7 +47,7 @@ class MyNumber extends Number implements Printable {
     }
 }
 
-class Boxx<T extends Number & Printable> {
+class Boxx<T extends Number & Printable & MyBox> {
     private T item;
 
     public Boxx(T item) {
@@ -58,9 +67,19 @@ class Boxx<T extends Number & Printable> {
     }
 }
 
+class MyNewBox implements MyBox {
+    @Override
+    public void display() {
+        System.out.println("MyNewBox: ");
+    }
+}
+
 public class Test {
     public static void main(String[] args) {
         MyNumber myNumber = new MyNumber(16);
+        MyNewBox myBox = new MyNewBox();
+        // here this will give error because MyNewBox doesn't implements Printable and extends Number which is the mandatory bound of Boxx class. all the bounds are mandator okay.
+        Boxx<MyNewBox> newBox = new Boxx<MyNewBox>(myBox);
         Boxx<MyNumber> box = new Boxx<>(myNumber);
         box.display();
     }
