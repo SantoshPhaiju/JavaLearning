@@ -34,6 +34,8 @@ public class EnumGenerics {
         DAY day = DAY.SUNDAY;
 //        DAY day1 =  "SUNDAY";
         double result1 = Operation.MULTIPLY.apply(13, 22);
+        double myInt = Operation.ADD.apply(45, 33);
+        System.out.println("myint: " + myInt);
         System.out.println("Result: " + result1);
     }
 }
