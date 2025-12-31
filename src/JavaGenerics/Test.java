@@ -82,7 +82,7 @@ public class Test {
         MyNumber myNumber = new MyNumber(16);
         MyNewBox myBox = new MyNewBox();
         // here this will give error because MyNewBox doesn't implements Printable and extends Number which is the mandatory bound of Boxx class. all the bounds are mandator okay.
-        Boxx<MyNewBox> newBox = new Boxx<MyNewBox>(myBox);
+//        Boxx<MyNewBox> newBox = new Boxx<MyNewBox>(myBox);
         Boxx<MyNumber> box = new Boxx<>(myNumber);
         box.display();
     }
