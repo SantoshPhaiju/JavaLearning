@@ -33,6 +33,11 @@ public class Main {
     private static <T extends Number> void print(T data) {
         System.out.println(data);
     }
+
+
+    /*
+        Generic types allows you to define a class, interface, or method with placeholders (type parameters) for the data type you will work with
+     */
 }
 
 // generic class -> This says that Calculator class can only accept Number type -> Int, Double, Float, Long
