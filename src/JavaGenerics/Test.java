@@ -47,6 +47,9 @@ class MyNumber extends Number implements Printable, MyBox {
     }
 }
 
+// yo vaneko k ho vaney, T ko thau ma testo class matra aauna milxa jun class le chai Number class lai extend gareko hos and then Printable ra MyBox interface lai implement gareko hos. okay sir. ani tyo class chai hya MyNumber xa jasle duabai condition fulfill gareko xa okay!
+
+// ani hya multiiple boundation lagauda chai first vaneko jaile class hunxa and the second chai jaile interface hunxa.
 class Boxx<T extends Number & Printable & MyBox> {
     private T item;
 
