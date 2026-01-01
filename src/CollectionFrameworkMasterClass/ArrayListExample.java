@@ -32,7 +32,7 @@ public class ArrayListExample {
         ArrayList<Integer> myList = new ArrayList<>(100);
 
 
-        // Arrays.asList() -> returns fixed sized LIST, cannot add or remove but can set(update) or replace the valude at certain index
+        // Arrays.asList() -> returns fixed sized LIST, cannot add or remove but can set(update) or replace the value at certain index
         List<Integer> newlist = Arrays.asList(1, 2, 4);
 //        newlist.add(3); // throws exception can't do this
 //        newlist.remove(3); // throws exception can't do this
