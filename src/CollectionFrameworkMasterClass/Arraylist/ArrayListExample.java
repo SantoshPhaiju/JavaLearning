@@ -1,11 +1,11 @@
-package CollectionFrameworkMasterClass;
+package CollectionFrameworkMasterClass.Arraylist;
 
 import java.util.*;
 
 class StringLengthComparator implements Comparator<String> {
     @Override
     public int compare(String s1, String s2) {
-        return 0;
+        return s2.length() - s1.length();
     }
 }
 
@@ -62,10 +62,17 @@ public class ArrayListExample {
         // remove by value
         List<String> newString = List.of("Santosh", "Messi", "Apple", "something");
         List<String> myStrings = new ArrayList<>(newString);
-        myStrings.remove("something"); // remove by value
+//        myStrings.remove("something"); // remove by value
 //        System.out.println(myStrings);
-        myStrings.remove(1); // remove by index
+//        myStrings.remove(1); // remove by index
 //        System.out.println(myStrings);
+        myStrings.sort(new StringLengthComparator());
+        // using lambda expression
+        System.out.println(myStrings);
+        myStrings.sort((o1, o2) -> {
+            return o2.length() - o1.length();
+        });
+        System.out.println(" mystrings" + myStrings);
 
         List<Integer> newIntList = new ArrayList<>();
         newIntList.add(1);
