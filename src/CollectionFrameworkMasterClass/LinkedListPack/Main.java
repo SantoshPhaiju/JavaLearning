@@ -1,5 +1,6 @@
 package CollectionFrameworkMasterClass.LinkedListPack;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Main {
@@ -14,8 +15,16 @@ public class Main {
         list.addLast(4); // time complexity = O(1)
 
         list.removeLast(); // time complexity = O(1)
-
-
+        list.removeIf(x -> x % 2 == 0);
         System.out.println(list);
+
+        LinkedList<String> animals = new LinkedList<>(Arrays.asList("Cat", "Dog", "Elephant"));
+        LinkedList<String> animalsToRemove = new LinkedList<>(Arrays.asList("Dog", "Lion"));
+
+        animals.removeAll(animalsToRemove);
+
+        System.out.println(animals);
+
+
     }
 }
