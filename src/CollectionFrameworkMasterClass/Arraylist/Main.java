@@ -14,6 +14,8 @@ public class Main {
         students.add(new Student("Messi", 3.75));
         students.add(new Student("Neymar", 3.4));
         students.add(new Student("Alice", 2.2));
+        System.out.println(students.get(3).getName()); // O(1)
+        students.addFirst(new Student("David", 1.8)); // O(n)
 
         // using lambda expression
         students.sort((o1, o2) -> {
@@ -29,9 +31,10 @@ public class Main {
         for (Student student : students) {
             System.out.println(student.getName() + " -> " + student.getGpa());
         }
+        System.out.println();
 
         // using java 8 feature -> it is easy method (method reference is double column operator i.e. (::) )
-        Comparator<Student> comparator = Comparator.comparing(Student::getGpa).reversed().thenComparing(Student::getName);
+        Comparator<Student> comparator = Comparator.comparing(Student::getName).thenComparing(Student::getGpa);
         students.sort(comparator);
 
 
