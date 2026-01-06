@@ -34,7 +34,6 @@ public class Main {
 //        map.remove(3);
         boolean nitin = map.remove(3, "Nitin");
         System.out.println("Is removed? " + nitin);
-        System.out.println(map);
         System.out.println(map.containsKey(3));
         System.out.println(map.containsValue("Neha"));
 
