@@ -14,6 +14,11 @@ class Person {
         this.id = id;
     }
 
+    public void display() {
+        System.out.println("Name: " + this.name);
+        System.out.println("Id: " + this.id);
+    }
+
     public String getName() {
         return name;
     }
@@ -66,9 +71,11 @@ public class HashMapDemo {
         Person p2 = new Person("Saugat Gautam", 2);
         Person p3 = new Person("Santosh", 1);
 
+        p1.display();
+
         map.put(p1, "Java Developer"); // hashcode1 --> index1
         map.put(p2, "App Developer"); // hashcode2 --> index2
-//        map.put(p3, "Java Instructor"); // hashcode3 --> index3, -> here we are using the default Object methods like hashcode and equals so this will not be equal because it internally uses memory location to generate the hashcode so they will never be equal
+//      map.put(p3, "Java Instructor"); // hashcode3 --> index3, -> here we are using the default Object methods like hashcode and equals so this will not be       equal because it internally uses memory location to generate the hashcode so they will never be equal
         map.put(p3, "Java Instructor"); // hashcode1 --> index1, -> here we have created our own hashcode and equals method in the person class so this will be equal
 
         System.out.println(map);
@@ -89,7 +96,5 @@ public class HashMapDemo {
         map1.put("Messi", 92); // hashcode2 --> index2
         map1.put("Santosh", 99); // hashcode1 --> index1 --> equals() --> replace
         System.out.println(map1);
-
-
     }
 }
