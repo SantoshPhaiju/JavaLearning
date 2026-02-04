@@ -90,7 +90,6 @@ public class HashMapDemo {
             System.out.println(entry.getKey().getName() + " -> " + entry.getValue());
         }
 
-
         Map<String, Integer> map1 = new HashMap<>();
         map1.put("Santosh", 90); // hashcode1 --> index1
         map1.put("Messi", 92); // hashcode2 --> index2
