@@ -16,6 +16,8 @@ public class Main {
         map.put(1, "Akshit");
         map.put(3, "Shubham");
         map.put(2, "Neha");
+//        map.put(null, "Vipul");
+//        map.put(null, "Nitin");
         System.out.println(map);
 //        System.out.println(map.get(3));
 
@@ -46,6 +48,12 @@ public class Main {
             it is not synchronized so it is not thread safe
             offers constant-time performance for basic operations like get and put assuming the hash
             function disperses elements properly among the buckets
+         */
+
+        /*
+            hashmap works same like hashtable in dsa.
+
+
          */
 
 
