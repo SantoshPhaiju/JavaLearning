@@ -2,6 +2,7 @@ package CollectionFrameworkMasterClass.Map;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class FruitMap {
     public static void main(String[] args) {
@@ -34,9 +35,33 @@ class NewPerson {
     private String name;
     private int id;
 
+    // when we make custom class for using hashmaps, write custom hashcode method and equals method for making nodes or instances equal and unique.
     public NewPerson(String name, int id) {
         this.name = name;
         this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null) {
+            return false;
+        }
+
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+
+        NewPerson other = (NewPerson) obj;
+        return id == other.getId() && Objects.equals(name, other.getName());
     }
 
     public String getName() {
