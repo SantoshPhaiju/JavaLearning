@@ -1,6 +1,7 @@
 package CollectionFrameworkMasterClass.Map;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class FruitMap {
     public static void main(String[] args) {
@@ -10,10 +11,20 @@ public class FruitMap {
         NewPerson p2 = new NewPerson("Bob", 2);
         NewPerson p3 = new NewPerson("Alice", 1);
 
-        map.put(p1, "Engineer");
-        map.put(p2, "Designer");
-        map.put(p3, "Manager");
-        
+        map.put(p1, "Engineer"); // hashcode --> index
+        map.put(p2, "Designer"); // hashcode --> index
+        map.put(p3, "Manager"); // hashcode --> index
+
+
+        System.out.println("HashMap Size: " + map.size());
+        System.out.println("Value for p1: " + map.get(p1));
+        System.out.println("Value for p3: " + map.get(p3));
+
+        Map<String, Integer> map1 = new HashMap<>();
+        map1.put("Shubham", 90);
+        map1.put("Neha", 92);
+        map1.put("Shubham", 99);
+
         map.forEach((key, value) -> System.out.println(key.getName() + " -> " + value));
 
     }
