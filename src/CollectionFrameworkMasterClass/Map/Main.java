@@ -52,8 +52,6 @@ public class Main {
 
         /*
             hashmap works same like hashtable in dsa.
-
-
          */
 
 
