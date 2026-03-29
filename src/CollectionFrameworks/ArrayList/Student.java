@@ -1,6 +1,6 @@
 package CollectionFrameworks.ArrayList;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String name;
     private int age;
 
@@ -23,5 +23,15 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return o.getAge() - this.getAge();
+    }
+
+    @Override
+    public String toString() {
+        return "{" + name + ", " + age + '}';
     }
 }
