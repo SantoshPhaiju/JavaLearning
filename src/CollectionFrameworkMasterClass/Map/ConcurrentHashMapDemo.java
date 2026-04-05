@@ -4,6 +4,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ConcurrentHashMapDemo {
     public static void main(String[] args) {
+        // it is not sorted by default
 //        ConcurrentMap<String, Integer> map = new ConcurrentHashMap<>();
         ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
         // in java 7 --> it works based on segments based locking --> divided in 16 segments by default --> which are smaller hashmaps
@@ -18,6 +19,18 @@ public class ConcurrentHashMapDemo {
         // Thread A work --> x to 50
         // if x is still 42 change it to 50 else don't change and retry
         // put --> index
+
+        // MAP --> SORTED --> THREADSAFE --> ConcurrentSkipListMap
+
+        map.put("santosh", 99);
+        map.put("neha", 98);
+        map.put("akshit", 97);
+        map.put("shubham", 96);
+        map.put("vipul", 95);
+        map.put("nitin", 94);
+        map.put("sagar", 93);
+
+        System.out.println(map);
 
 
     }

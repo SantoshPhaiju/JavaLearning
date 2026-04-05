@@ -66,6 +66,37 @@ class Person {
 
 public class HashMapDemo {
     public static void main(String[] args) {
+      /*
+ HashMap Internal Working (Java)
+
+ - HashMap internally uses an array of buckets:
+     Node<K, V>[] table;
+
+ - Each index in this array is called a "bucket".
+
+ - Data is stored based on the hash of the key:
+     index = hash(key) % array_size
+
+ - Each bucket can contain multiple entries in case of collision.
+   Collision is handled using:
+     1. Linked List (default)
+     2. Red-Black Tree (if entries exceed threshold, Java 8+)
+
+ - Each entry inside a bucket (Node) contains 4 things:
+     1. int hash       -> hash value of the key
+     2. K key          -> the key
+     3. V value        -> the value
+     4. Node<K,V> next -> reference to next node (for chaining)
+
+ - If multiple keys map to the same bucket:
+     -> They are linked using 'next' pointer (linked list)
+     -> Converted to balanced tree if size > 8 (Java 8+)
+
+ - Key Points:
+     • Not based on ArrayList (uses array internally)
+     • Provides O(1) average time complexity
+     • Allows one null key and multiple null values
+*/
         HashMap<Person, String> map = new HashMap<>();
         Person p1 = new Person("Santosh", 1);
         Person p2 = new Person("Saugat Gautam", 2);
