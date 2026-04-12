@@ -20,6 +20,7 @@ public class QueueLearning {
         myLinkedList.addLast("World");
         System.out.println(myLinkedList);
         myLinkedList.add(1, "Hello World");
+        System.out.println(myLinkedList);
         myLinkedList.removeLast();
         System.out.println(myLinkedList);
     }

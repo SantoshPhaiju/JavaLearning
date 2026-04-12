@@ -22,6 +22,9 @@ public class SetOverview {
         set.add(12);
         set.add(23);
         set.add(34);
+        set.add(34);
+        set.add(34);
+        set.add(34); // no duplicate entries in set.
         set.add(45);
         set.add(53);
         set.add(645);
@@ -44,6 +47,7 @@ public class SetOverview {
         // for thread safety
         Set<Integer> integers = Collections.synchronizedSet(set);
 
+        System.out.println(integers);
 
     }
 }
