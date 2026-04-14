@@ -24,7 +24,6 @@ public class PasswordGenerator {
             finalPassword.append(c);
         }
 
-
         System.out.println("Generated Password: " + finalPassword.toString());
     }
 

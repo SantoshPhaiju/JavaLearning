@@ -16,6 +16,6 @@ public class MyBuilder {
         while (end >= start && name.charAt(end) == ' ') end--;
         name = new StringBuilder(name.substring(start, end + 1));
 
-        System.out.println("After trim: " + name);
+        System.out.println("After trim:" + name);
     }
 }

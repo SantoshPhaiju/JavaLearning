@@ -38,11 +38,15 @@ public class SetOverview {
         System.out.println(set.size());
         System.out.println(set.contains(12));
         System.out.println(set.contains(100));
+        System.out.println(set.remove(9));
 
 
         for (int i : set) {
             System.out.println(i);
         }
+
+//        set.clear();
+        System.out.println(set.isEmpty());
 
         // for thread safety
         Set<Integer> integers = Collections.synchronizedSet(set);
