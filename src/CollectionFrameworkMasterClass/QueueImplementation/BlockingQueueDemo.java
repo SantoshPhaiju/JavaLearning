@@ -1,9 +1,7 @@
 package CollectionFrameworkMasterClass.QueueImplementation;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.PriorityBlockingQueue;
+import java.util.Comparator;
+import java.util.concurrent.*;
 
 class Producer implements Runnable {
     private BlockingQueue<Integer> queue;
@@ -65,8 +63,8 @@ public class BlockingQueueDemo {
         Thread producer = new Thread(new Producer(queue));
         Thread consumer = new Thread(new Consumer(queue));
 
-        producer.start();
-        consumer.start();
+//        producer.start();
+//        consumer.start();
 
         BlockingQueue<Integer> queue2 = new LinkedBlockingQueue<>();
         // optionally, bounded can occur out of memory error, so keep it bounded
@@ -75,7 +73,21 @@ public class BlockingQueueDemo {
         // higher concurrency between producer and consumer, less waiting
         // used when there are many threads
 
-        BlockingQueue<Integer> queue3 = new PriorityBlockingQueue<>();
+        BlockingQueue<String> queue3 = new PriorityBlockingQueue<>(11, Comparator.reverseOrder()); // default capacity 11
+        // also unbounded
+        // same as priorityQueue, backend by binary heap as array and can grow dynamically
+        // head is based on their natural ordering or by a provided comparator like priority queue
+        // put won't block
+
+        queue3.add("apple");
+        queue3.add("banana");
+        queue3.add("cherry");
+        System.out.println(queue3);
+
+        BlockingQueue<Integer> queue4 = new SynchronousQueue<>();
+        // each insert operation must wait for a corresponding remove operation by another thread and vice versa
+        // first item inserted and next will not be inserted until the first one is not removed.
+        // it cannot store elements, capacity of at most one element
 
 
         // thread-safe queue
