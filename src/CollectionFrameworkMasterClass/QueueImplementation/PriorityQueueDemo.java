@@ -9,6 +9,8 @@ public class PriorityQueueDemo {
         // can use custom comparator for customize ordering
         // does not allow null elements
 
+        // priorityQueue is implemented as a min-heap by default (for natural ordering)
+
 //        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
         PriorityQueue<Integer> pq = new PriorityQueue<>((x, y) -> y - x);
         pq.add(15);
