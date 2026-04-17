@@ -52,6 +52,8 @@ class Consumer implements Runnable {
 public class BlockingQueueDemo {
     public static void main(String[] args) {
 
+        // All the blocking queues are used when we need thread communication right, so that each of them blocks each other simply, if we don't need thread communication and non-blocking type of thing then we should use threadsafenonblockingqueues they are like:- concurrentLinkedQueue, concurrentLinkedDeque
+
         BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(5); // fixed size given
         // A bounded, blocking queue backed by circular array
         // low-memory overhead
