@@ -9,10 +9,10 @@ public class Main {
         // it is thread safe unlike arraylist and linkedlist
         // it is same like arraylist
 
-        // it has default capacity of 10 and we can also pass the initial capacity of it in constructor
+        // it has default capacity of 10, and we can also pass the initial capacity of it in constructor
         Vector<Integer> newVector = new Vector<>(); // initial capacity is 10
 //        Vector<Integer> myVector = new Vector<>(5); // initial capacity is 11
-        Vector<Integer> myVector = new Vector<>(5, 3); // here this is initial capacity and growth factor, here capacity will increased by 3, 5 + 3 = 8;
+        Vector<Integer> myVector = new Vector<>(5, 3); // here this is initial capacity and growth factor; here capacity will increased by 3, 5 + 3 = 8;
 
         myVector.add(1);
         myVector.add(1);
@@ -23,7 +23,7 @@ public class Main {
         myVector.add(1);
 
         // here initial capacity is increased by double unlike arraylist where it was 1.5 times.
-        // here in vector we can check the capacity too unlike arraylist where we couldn't do that.
+        // here in vector we can check the capacity too, unlike arraylist where we couldn't do that.
         System.out.println(myVector.capacity());  // 5 + 3 = 8;
 
         LinkedList<Integer> linkedList = new LinkedList<>();
