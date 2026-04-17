@@ -2,6 +2,8 @@ package CollectionFrameworkMasterClass.QueueImplementation;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
 
 class Producer implements Runnable {
     private BlockingQueue<Integer> queue;
@@ -53,13 +55,27 @@ public class BlockingQueueDemo {
     public static void main(String[] args) {
 
         BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(5); // fixed size given
-        // A bounded, blocking queue backed by an array
+        // A bounded, blocking queue backed by circular array
+        // low-memory overhead
+        // single lock, producer and consumer block each other
+        // uses a single lock for both enqueue and dequeue operations, more waiting
+        // if there are many threads --> we will have problem
+        // used when there are less threads
 
         Thread producer = new Thread(new Producer(queue));
         Thread consumer = new Thread(new Consumer(queue));
 
         producer.start();
         consumer.start();
+
+        BlockingQueue<Integer> queue2 = new LinkedBlockingQueue<>();
+        // optionally, bounded can occur out of memory error, so keep it bounded
+        // backend by linkedlist
+        // uses two separate locks for enqueue and dequeue operations
+        // higher concurrency between producer and consumer, less waiting
+        // used when there are many threads
+
+        BlockingQueue<Integer> queue3 = new PriorityBlockingQueue<>();
 
 
         // thread-safe queue
