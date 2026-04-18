@@ -1,10 +1,10 @@
 package CollectionFrameworkMasterClass.QueueImplementation;
 
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class TaskSubmissionSystem {
-    private static BlockingQueue<String> taskQueue = new ConcurrentLinkedQueue<>();
+    private static ConcurrentLinkedQueue<String> taskQueue = new ConcurrentLinkedQueue<>();
+    // same like ConcurrentHashMap logic.
 
     public static void main(String[] args) {
         Thread producer = new Thread(() -> {
