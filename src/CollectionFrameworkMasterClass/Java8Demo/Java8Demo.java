@@ -2,10 +2,7 @@ package CollectionFrameworkMasterClass.Java8Demo;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class Java8Demo {
     public static void main(String[] args) {
@@ -73,6 +70,27 @@ public class Java8Demo {
         // Supplier --> doesn't take anything but gives everything haha very dani thing
         Supplier<String> giveHelloWorld = () -> "Hello World";
         System.out.println(giveHelloWorld.get());
+
+        // combined example
+        Predicate<Integer> predicate = x -> x % 2 == 0;
+        Function<Integer, Integer> function = x -> x * x;
+        Consumer<Integer> consumer1 = System.out::println;
+        Supplier<Integer> supplier = () -> 100;
+
+        if (predicate.test(supplier.get())) {
+            consumer1.accept(function.apply(supplier.get()));
+        }
+
+        // BiPredicate, BiConsumer, BiFunction
+        BiPredicate<Integer, Integer> isSumEven = (x, y) -> (x + y) % 2 == 0;
+        System.out.println(isSumEven.test(10, 20));
+        BiConsumer<Integer, String> biConsumer = (x, y) -> {
+            System.out.println(x);
+            System.out.println(y);
+        };
+
+        BiFunction<String, String, Integer> biFunction = (x, y) -> (x + y).length();
+        System.out.println(biFunction.apply("Akshit", "Shubham"));
 
 
     }
