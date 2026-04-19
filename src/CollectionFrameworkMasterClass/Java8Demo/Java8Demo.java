@@ -1,5 +1,8 @@
 package CollectionFrameworkMasterClass.Java8Demo;
 
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 public class Java8Demo {
     public static void main(String[] args) {
         // Streams
@@ -24,10 +27,43 @@ public class Java8Demo {
         System.out.println(sum.operation(10, 20));
 
 
-        // ======================== Predicate ==========================
-        
+        // ====== Predicate --> Functional Interface (Boolean-valued function) ========
+        // it is used to filter the data based on some condition
+        // it holds a condition and returns true or false
+        // i'm storing condition in a variable and passing it to the Predicate.test() method
+        // we need this in streams okay
+        Predicate<Integer> isEven = x -> x % 2 == 0;
+        System.out.println(isEven.test(4));
+        System.out.println();
+        Predicate<String> isWordStartingWithLetterA = x -> x.toLowerCase().startsWith("a");
+        Predicate<String> isWordEndingWithH = x -> x.toLowerCase().endsWith("h");
+        Predicate<String> and = isWordStartingWithLetterA.and(isWordEndingWithH);
+        System.out.println(and.test("Alish"));
+        System.out.println(and.test("alisha"));
+
+
+        // ==== Function --> work for you ======
+        Function<Integer, Integer> doubleIt = x -> 2 * x;
+        Function<Integer, Integer> tripleIt = x -> 3 * x;
+        System.out.println(doubleIt.andThen(tripleIt).apply(20));
+        System.out.println(doubleIt.compose(tripleIt).apply(20));
+        System.out.println(doubleIt.apply(543));
+
+        // used in stream okay.
+        Function<Integer, Integer> identity = Function.identity();
+        System.out.println(identity.apply(5));
+
+
+        // Consumer
+
 
     }
+
+    // yo vanda ramro chai tyo maathi ko predicate wala gareko ramro thik xa. huna chai duabai gareko same ho
+    public static boolean isEven(int x) {
+        return x % 2 == 0;
+    }
+
 }
 
 
@@ -45,6 +81,7 @@ class SumOperation implements MathOperation {
     }
 }
 
+@FunctionalInterface
 interface MathOperation {
     int operation(int a, int b);
 }
