@@ -3,6 +3,7 @@ package CollectionFrameworkMasterClass.Java8Demo;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.*;
+import java.util.stream.Collectors;
 
 public class Java8Demo {
     public static void main(String[] args) {
@@ -88,10 +89,27 @@ public class Java8Demo {
             System.out.println(x);
             System.out.println(y);
         };
+        biConsumer.accept(10, "Akshit");
 
         BiFunction<String, String, Integer> biFunction = (x, y) -> (x + y).length();
         System.out.println(biFunction.apply("Akshit", "Shubham"));
 
+        // unary operator is same as function but we don't have to give two same thing twice
+        Function<Integer, Integer> function1 = x -> x * x;
+        UnaryOperator<Integer> unaryOperator = x -> x * x;
+        BinaryOperator<Integer> b = (x, y) -> x + y;
+        System.out.println(unaryOperator.apply(5));
+
+        // Method reference --> use method without invoking & used in place of lambda expression
+        // shortcut for lambda expression
+        List<String> students = Arrays.asList("Ram", "Shyam", "GhanShyam");
+        students.forEach(x -> System.out.println(x));
+        students.forEach(System.out::println); // method reference
+
+        // constructor reference
+        List<String> names = Arrays.asList("A", "B", "C");
+        List<MobilePhone> mobilePhoneList = names.stream().map(MobilePhone::new).collect(Collectors.toList());
+        System.out.println(mobilePhoneList);
 
     }
 
@@ -100,6 +118,14 @@ public class Java8Demo {
         return x % 2 == 0;
     }
 
+}
+
+class MobilePhone {
+    String name;
+
+    public MobilePhone(String name) {
+        this.name = name;
+    }
 }
 
 
