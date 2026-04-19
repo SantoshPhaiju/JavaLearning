@@ -1,7 +1,11 @@
 package CollectionFrameworkMasterClass.Java8Demo;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Java8Demo {
     public static void main(String[] args) {
@@ -54,7 +58,21 @@ public class Java8Demo {
         System.out.println(identity.apply(5));
 
 
-        // Consumer
+        // Consumer --> Functional Interface (void-valued function) it only takes but doesn't give anything haha lobi function
+        Consumer<Integer> consumer = x -> System.out.println(x);
+        consumer.accept(532);
+        List<Integer> list = Arrays.asList(1, 2, 3);
+        Consumer<List<Integer>> printList = x -> {
+            for (int i : x) {
+                System.out.println(i);
+            }
+        };
+
+        printList.accept(list);
+
+        // Supplier --> doesn't take anything but gives everything haha very dani thing
+        Supplier<String> giveHelloWorld = () -> "Hello World";
+        System.out.println(giveHelloWorld.get());
 
 
     }
