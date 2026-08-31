@@ -18,5 +18,11 @@ public class LooseDemo {
         userService = new UserService(notificationService);
 
         userService.notify("Hello springboot.");
+
+        UserService userServiceSetter = new UserService();
+        userServiceSetter.setNotificationService(notificationService);
+        userService.notificationService = notificationService;
+        userServiceSetter.notify("Hello springboot. setter injection");
+        userService.notify("Hello springbootnew . field injection");
     }
 }
