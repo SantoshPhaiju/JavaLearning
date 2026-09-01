@@ -35,6 +35,14 @@ public class Java8Demo {
         // i'm storing condition in a variable and passing it to the Predicate.test() method
         // we need this in streams okay
         Predicate<Integer> isEven = x -> x % 2 == 0;
+        Predicate<Integer> isOdd = new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer num) {
+                return num % 2 != 0;
+            }
+        };
+
+        System.out.println(isOdd.test(5));
         System.out.println(isEven.test(4));
         System.out.println();
         Predicate<String> isWordStartingWithLetterA = x -> x.toLowerCase().startsWith("a");
@@ -47,6 +55,13 @@ public class Java8Demo {
         // ==== Function --> work for you ======
         Function<Integer, Integer> doubleIt = x -> 2 * x;
         Function<Integer, Integer> tripleIt = x -> 3 * x;
+        Function<Integer, Integer> squareIt = new Function<Integer, Integer>() {
+            @Override
+            public Integer apply(Integer x) {
+                return x * x;
+            }
+        };
+        System.out.println(squareIt.apply(5));
         System.out.println(doubleIt.andThen(tripleIt).apply(20));
         System.out.println(doubleIt.compose(tripleIt).apply(20));
         System.out.println(doubleIt.apply(543));

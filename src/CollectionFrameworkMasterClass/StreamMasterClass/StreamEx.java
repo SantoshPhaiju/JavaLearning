@@ -16,7 +16,8 @@ public class StreamEx {
             nums.add(ran.nextInt(100));
         }
 
-        int sum = nums.stream().map(i -> i * 2).reduce(0, (a, b) -> a + b);
+//        int sum = nums.stream().map(i -> i * 2).reduce(0, (a, b) -> a + b);
+        int sum = nums.stream().map(i -> i * 2).reduce(0, Integer::sum);
         System.out.println(sum);
 
     }
