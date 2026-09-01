@@ -33,9 +33,12 @@ public class StreamDemo {
         Stream<Integer> s2 = s1.filter(n -> n % 2 == 0);
         Stream<Integer> s3 = s2.map(n -> n * 2);
 
+//        int sum = s3.reduce(0, Integer::sum);
+        int sum = s3.reduce(0, (a, b) -> a + b);
+        System.out.println(sum);
 
 //        s1.forEach(System.out::println);
-        s3.forEach(System.out::println);
+//        s3.forEach(System.out::println);
 //        s1.forEach(System.out::println);
 
 //        int sum = 0;
