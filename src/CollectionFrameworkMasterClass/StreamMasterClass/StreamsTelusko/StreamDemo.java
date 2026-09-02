@@ -1,4 +1,4 @@
-package StreamsTelusko;
+package CollectionFrameworkMasterClass.StreamMasterClass.StreamsTelusko;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,7 +40,7 @@ public class StreamDemo {
         int result = nums.stream()
                 .filter(n -> n % 2 == 0)
                 .map(n -> n * 2)
-                .reduce(0, (c, e) -> c + e);
+                .reduce(0, (c, e) -> c + e); // c -> carry, e -> element
         System.out.println(result);
 
 //        s1.forEach(System.out::println);
