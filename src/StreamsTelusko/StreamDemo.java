@@ -3,7 +3,6 @@ package StreamsTelusko;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 public class StreamDemo {
     public static void main(String[] args) {
@@ -27,15 +26,22 @@ public class StreamDemo {
 //            System.out.println(n);
 //        }
 
+
 //        nums.forEach(System.out::println);
         // We can use stream only once not multiple times
-        Stream<Integer> s1 = nums.stream();
-        Stream<Integer> s2 = s1.filter(n -> n % 2 == 0);
-        Stream<Integer> s3 = s2.map(n -> n * 2);
+//        Stream<Integer> s1 = nums.stream();
+//        Stream<Integer> s2 = s1.filter(n -> n % 2 == 0);
+//        Stream<Integer> s3 = s2.map(n -> n * 2);
 
 //        int sum = s3.reduce(0, Integer::sum);
-        int sum = s3.reduce(0, (a, b) -> a + b);
-        System.out.println(sum);
+//        int sum = s3.reduce(0, (a, b) -> a + b);
+//        System.out.println(sum);
+
+        int result = nums.stream()
+                .filter(n -> n % 2 == 0)
+                .map(n -> n * 2)
+                .reduce(0, (c, e) -> c + e);
+        System.out.println(result);
 
 //        s1.forEach(System.out::println);
 //        s3.forEach(System.out::println);
