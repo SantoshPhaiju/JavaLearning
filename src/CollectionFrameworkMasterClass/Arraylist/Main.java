@@ -33,7 +33,7 @@ public class Main {
         }
         System.out.println();
 
-        // using java 8 feature -> it is easy method (method reference is double column operator i.e. (::) )
+        // using java 8 feature -> it is easy method (method reference is double colon operator i.e. (::) )
         Comparator<Student> comparator = Comparator.comparing(Student::getName).thenComparing(Student::getGpa);
         students.sort(comparator);
 

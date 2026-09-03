@@ -9,6 +9,8 @@ public enum Day {
     FRIDAY("Friday", "Sukrabar"),
     SATURDAY("Saturday", "Sanibar");
 
+
+    // in enums we can have fields, methods, constructors and overridden methods too...
     private final String lowercase;
     private final String nepali;
 

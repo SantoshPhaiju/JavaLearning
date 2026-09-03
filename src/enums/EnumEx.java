@@ -19,11 +19,17 @@ public class EnumEx {
 
 
     public static void main(String[] args) {
+        OrderStatus orderStatus = OrderStatus.SHIPPED;
+        System.out.println(orderStatus);
+        System.out.println(orderStatus.name());
+        System.out.println(orderStatus.getPriority());
         System.out.println(DayClass.SUNDAY);
         System.out.println(Day.SUNDAY);
         System.out.println(Day.MONDAY);
 
+
         Day monday = Day.MONDAY;
+        System.out.println("monday in lowercasae hehe " + monday.getLowercase());
 
         System.out.println(monday.name());
         Day enumDay = Day.valueOf("TUESDAY");
