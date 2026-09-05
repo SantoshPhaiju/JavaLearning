@@ -7,7 +7,7 @@ public class CopyOnWriteArraySetDemo {
     public static void main(String[] args) {
         // similar as CopyOnWriteArrayList
         // but why se this? why need this?
-        // because HashSet, LinkedHashSet, TreeSet, EnumSet are not thread safe, if multiple threads tries to modify the set at the same time then, data corruption will occur, can occur concurrent modification exception
+        // because HashSet, LinkedHashSet, TreeSet, EnumSet are not thread safe, if multiple threads tries to modify the set at the same time, then, data corruption will occur, can occur concurrent modification exception
         // but we do have ConcurrentSkipListSet, why to use CopyOnWriteArraySet??? because there in ConcurrentSkipListSet:- we do have the elements stored in sorted form and there is different requirement like: we need sorted elements, need to use range based operations like: larger than this element smaller than this element type of thing. Here elements are stored in skiplist data structure
 
         // but in CopyOnWriteArraySet:- we do not have the elements stored in sorted form, elements are stored in array internally.
@@ -48,17 +48,17 @@ public class CopyOnWriteArraySetDemo {
         for (Integer num : concurrentSkipListSet) {
             System.out.println("Reading from ConcurrentSkipListSet: " + num);
             // Attempting to modify the set while iterating
-            if (num == 5) {
+            if (num == 1) {
                 concurrentSkipListSet.add(6); // now it will not print 6
             }
 //            concurrentSkipListSet.add(6); // this will add and print
             // it prints 6 because it is added to the set and it is not using the copy of the set and working on the original set it prints 6 too here, It is called Weakly consistent, because it can reflect the changes while reading or it will not reflect not sure..
         }
 
+        System.out.println("concurrentSkipListSet: " + concurrentSkipListSet);
+
 
         // If we are doing read-intensive tasks we use CopyOnWriteArraySet, because for every write a new copy of the set is made so not so efficient
         // For frequent read and write we use concurrentskiplistSet for balance
-
-
     }
 }

@@ -19,7 +19,7 @@ public class HashTableDemo {
         System.out.println(hashtable.get("Santosh"));
         hashtable.values().forEach(System.out::println);
 
-        // all the methods of hashmap are available in hashtable as well like put, get, remove, containsKey, containsValue, etc. becuase it implements map interface
+        // all the methods of hashmap are available in hashtable as well like put, get, remove, containsKey, containsValue, etc. because it implements map interface
 
 //        hashtable.put(null, 2); // throws exception
 //        hashtable.put("Santosh", null); // throws exception

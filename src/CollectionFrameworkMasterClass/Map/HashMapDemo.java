@@ -45,23 +45,23 @@ class Person {
         return "id: " + id + ", name: " + name;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-
-        if (obj == null) {
-            return false;
-        }
-
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-
-        Person other = (Person) obj;
-        return id == other.getId() && Objects.equals(name, other.getName());
-    }
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//
+//        if (obj == null) {
+//            return false;
+//        }
+//
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+//
+//        Person other = (Person) obj;
+//        return id == other.getId() && Objects.equals(name, other.getName());
+//    }
 }
 
 public class HashMapDemo {
@@ -106,10 +106,14 @@ public class HashMapDemo {
 
         map.put(p1, "Java Developer"); // hashcode1 --> index1
         map.put(p2, "App Developer"); // hashcode2 --> index2
-//      map.put(p3, "Java Instructor"); // hashcode3 --> index3, -> here we are using the default Object methods like hashcode and equals so this will not be       equal because it internally uses memory location to generate the hashcode so they will never be equal
+//      map.put(p3, "Java Instructor"); // hashcode3 --> index3, -> here we are using the default Object  methods like hashcode and equals so this will not be equal because it internally uses memory location to generate the hashcode so they will never be equal
         map.put(p3, "Java Instructor"); // hashcode1 --> index1, -> here we have created our own hashcode and equals method in the person class so this will be equal
 
+        System.out.println("The hashcodes: ");
+        System.out.println(p1.hashCode() + ", " + p2.hashCode() + ", " + p3.hashCode());
+        System.out.println("the map: ");
         System.out.println(map);
+        System.out.println(p1 + ", " + p2 + ", " + p3);
         System.out.println(p1);
 
         System.out.println("HashMap Size: " + map.size());
