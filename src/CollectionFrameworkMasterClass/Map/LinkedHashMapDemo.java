@@ -9,7 +9,7 @@ public class LinkedHashMapDemo {
         // It is also not a thread safe like hashmap
         // linked hashmap is thorai slow than hashmap
         /*
-            We use linkedhasmap when we need the order
+            We use linkedhasmap when we need the insertion order
          */
 //        LinkedHashMap<String, Integer> map = new LinkedHashMap<>(); // uses doubly linked list
         LinkedHashMap<String, Integer> map = new LinkedHashMap<>(11, 0.3f, true);
@@ -64,5 +64,31 @@ public class LinkedHashMapDemo {
         map2.putIfAbsent("Vipul", 33);
         System.out.println(map2);
         System.out.println(shubham);
+
+//        HashMap<Integer, String> heroes = new HashMap<>(Map.of(
+//                1, "Santosh",
+//                2, "Thor",
+//                3, "IronMan",
+//                4, "Hulk",
+//                5, "Captain America",
+//                6, "Dr. Strange",
+//                7, "Dr. Doom"
+//        ));
+        Map<Integer, String> heroes = new LinkedHashMap<>();
+        heroes.put(4, "Hulk");
+        heroes.put(1, "Santosh");
+        heroes.put(3, "IronMan");
+        heroes.put(5, "Captain America");
+        heroes.put(7, "Dr. Doom");
+        heroes.put(2, "Thor");
+        heroes.put(6, "Dr. Strange");
+
+        for (Map.Entry<Integer, String> entry : heroes.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+        System.out.println(heroes);
+
+
     }
 }
