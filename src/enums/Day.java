@@ -23,7 +23,7 @@ public enum Day {
     }
 
     Day(String lower, String nepali) {
-        System.out.println("constructor called");
+//        System.out.println("constructor called");
         this.lowercase = lower;
         this.nepali = nepali;
     }
