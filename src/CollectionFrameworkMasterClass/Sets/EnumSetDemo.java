@@ -3,6 +3,8 @@ package CollectionFrameworkMasterClass.Sets;
 import enums.Day;
 
 import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 enum Permissions {
@@ -26,5 +28,30 @@ public class EnumSetDemo {
         } else {
             System.out.println("User A does not have delete permission");
         }
+
+        HashMap<Integer, Day> map = new HashMap<>();
+        map.put(1, Day.MONDAY);
+        map.put(2, Day.TUESDAY);
+        map.put(3, Day.WEDNESDAY);
+        System.out.println(map);
+        for (Integer day : map.keySet()) {
+            System.out.println(day + " -> " + map.get(day));
+        }
+        for (Map.Entry<Integer, Day> entry : map.entrySet()) {
+            System.out.println(entry);
+        }
+
+        if (map.containsValue(Day.MONDAY)) {
+            System.out.println("Monday is present in the map");
+        }
+
+        Map<Day, String> openingTimes = new HashMap<>();
+        openingTimes.put(map.get(1), "9:00 AM");
+        openingTimes.put(map.get(2), "10:00 AM");
+        openingTimes.put(map.get(3), "11:00 AM");
+        System.out.println(openingTimes);
+
+        String openingTimeOfTuesday = openingTimes.get(map.get(2)) != null ? "Will be opened on Tuesday!" : "Will be remained closed on Tuesday!";
+        System.out.println(openingTimeOfTuesday);
     }
 }
