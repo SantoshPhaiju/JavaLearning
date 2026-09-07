@@ -6,7 +6,7 @@ public class PriorityQueueDemo {
     public static void main(String[] args) {
         // part of the queue interface
         // orders elements based on their natural ordering (for primitives lowest comes first)
-        // can use custom comparator for customize ordering
+        // can use custom comparator for customized ordering
         // does not allow null elements
 
         // priorityQueue is implemented as a min-heap by default (for natural ordering)

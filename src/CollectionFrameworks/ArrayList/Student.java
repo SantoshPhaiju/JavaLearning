@@ -25,9 +25,11 @@ public class Student implements Comparable<Student> {
         this.age = age;
     }
 
+    // this thing is called the comparable being done okay
     @Override
     public int compareTo(Student o) {
-        return o.getAge() - this.getAge();
+        System.out.println("Comparing " + this.getName() + " = " + this.getAge() + " and " + " " + o.getName() + " = " + o.getAge());
+        return this.getAge() - o.getAge();
     }
 
     @Override

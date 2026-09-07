@@ -7,7 +7,7 @@ import java.util.LinkedList;
 public class DequeDemo {
     public static void main(String[] args) {
         // double-ended-queue
-        // allows insertion and deletion of elements form both ends
+        // allows insertion and deletion of elements from both ends
         // versatile than regular queues and stacks because they support all the operations of both.
 
         /*

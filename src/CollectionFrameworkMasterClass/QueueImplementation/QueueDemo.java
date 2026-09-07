@@ -35,7 +35,7 @@ public class QueueDemo {
         System.out.println(queue1.poll()); // better than remove() because it returns null if queue is empty
 
 //        System.out.println(queue1.element()); // throws exception if queue is empty
-        System.out.println(queue1.peek());
+        System.out.println(queue1.peek()); // returns null if queue is empty
 
         Queue<Integer> queue2 = new ArrayBlockingQueue<>(2);
         System.out.println(queue2.add(1));
