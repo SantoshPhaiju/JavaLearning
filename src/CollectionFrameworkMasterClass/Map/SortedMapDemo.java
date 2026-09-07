@@ -40,7 +40,7 @@ public class SortedMapDemo {
         navigableMap.put(5, "Five");
         navigableMap.put(3, "Three");
 
-        System.out.println(navigableMap);
+        System.out.println("navigable map" + navigableMap);
         System.out.println(navigableMap.lowerKey(4));
         System.out.println(navigableMap.ceilingKey(4));
         System.out.println(navigableMap.ceilingKey(3));
